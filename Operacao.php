@@ -14,24 +14,24 @@
             return "{$num1} {$operacao} {$num2} = {$val}";
 
         }
-        if(strcasecmp($operacao,"*") == 0){
+        else if(strcasecmp($operacao,"*") == 0){
          
             $val =  Multiplicacao($num1,$num2);
             return "{$num1} {$operacao} {$num2} = {$val}";
         }
-        if(strcasecmp($operacao,"/") == 0){
+        else if(strcasecmp($operacao,"/") == 0){
         
             $val =  Divisao($num1,$num2);
             return "{$num1} {$operacao} {$num2} = {$val}";
 
         }
-        if(strcasecmp($operacao,"!") == 0){
+        else if(strcasecmp($operacao,"!") == 0){
         
             $val =  Fatoração($num1,$num2);
             return "{$num1} {$operacao} {$num2} = {$val}";
 
         }
-        if(strcasecmp($operacao,"^") == 0){
+        else if(strcasecmp($operacao,"^") == 0){
 
             $val =  Potenciação($num1,$num2);
             return "{$num1} {$operacao} {$num2} = {$val}";
