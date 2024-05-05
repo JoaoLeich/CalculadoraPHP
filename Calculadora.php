@@ -34,7 +34,8 @@
         <?php
         foreach ($_SESSION['historico'] as $calculo): 
             echo $calculo;
-        endforeach; ?>
+        endforeach; 
+        ?>
     </ul>
 </body>
 
