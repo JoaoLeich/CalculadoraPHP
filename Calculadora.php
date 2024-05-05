@@ -25,7 +25,7 @@
     <label for="Numero2">Numero: </label>
     <input type="number" name="Numero2" id="Numero2">
 
-    <input type="submit" value="">
+    <input type="submit" name="memoria" value="Memória">
 
 </form>
 
