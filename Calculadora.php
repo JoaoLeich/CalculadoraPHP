@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
 </head>
+<body>
 <form action="" method="get" id="CalcForm" name="CalcForm">
 
     <label for="Numero1">Numero: </label>
@@ -25,12 +26,15 @@
     <label for="Numero2">Numero: </label>
     <input type="number" name="Numero2" id="Numero2">
 
+    <input type="submit" value="Oper">
     <input type="submit" name="memoria" value="Memória">
-
 </form>
-
-<body>
-
+<h2>Histórico de Cálculos</h2>
+    <ul>
+        <?php foreach ($_SESSION['historico'] as $calculo): ?>
+            <li><?php echo $calculo; ?></li>
+        <?php endforeach; ?>
+    </ul>
 </body>
 
 </html>
