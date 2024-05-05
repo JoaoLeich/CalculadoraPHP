@@ -9,8 +9,8 @@
 <body>
 <form action="" method="get" id="CalcForm" name="CalcForm">
 
-    <label for="Numero1">Numero: </label>
-    <input type="number" name="Numero1" id="Numero1">
+    <label for="num1">Numero: </label>
+    <input type="number" name="num1" id="num1">
 
     <label for="Operacao">Selecione a Operacao: </label>
 
@@ -23,17 +23,18 @@
         <option value="^">Potenciação</option>
     </select>
 
-    <label for="Numero2">Numero: </label>
-    <input type="number" name="Numero2" id="Numero2">
+    <label for="num2">Numero: </label>
+    <input type="number" name="num2" id="num2">
 
-    <input type="submit" value="Oper">
+    <input type="submit" name= "Oper" value="Calcular">
     <input type="submit" name="memoria" value="Memória">
 </form>
 <h2>Histórico de Cálculos</h2>
     <ul>
-        <?php foreach ($_SESSION['historico'] as $calculo): ?>
-            <li><?php echo $calculo; ?></li>
-        <?php endforeach; ?>
+        <?php
+        foreach ($_SESSION['historico'] as $calculo): 
+            echo $calculo;
+        endforeach; ?>
     </ul>
 </body>
 
@@ -43,11 +44,10 @@
 <?php 
 
     require_once 'Operacao.php';
-    
-    $val1 = $_GET['Numero1'];    
-    
-    $val2 = $_GET['Numero2'];
 
-    echo Oper($_GET['Operacao'],$val1,$val2); 
-
+    if ('num1' != "" ) {
+        $val1 = $_GET['num1'];
+        $val2 = $_GET['num2'];
+        echo Oper($_GET['Operacao'],$val1,$val2); 
+    }
 ?>

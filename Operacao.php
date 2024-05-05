@@ -44,6 +44,11 @@
                 return 'Erro: Operação inválida';
         }
     }
+    function adicionarCalculoAoHistorico($numero1, $numero2, $operacao, $resultado) {
+        $calculo = "$numero1 $operacao $numero2 = $resultado";
+        $_SESSION['historico'][] = $calculo;
+    }
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $numero1 = $_POST['num1'];
         $numero2 = $_POST['num2'];
@@ -54,11 +59,9 @@
             $_SESSION['num2'] = $numero2;
             $_SESSION['operacao'] = $operacao;
         } else {
-            $resultado = Oper($num1, $num2, $operacao);
-            $historico = $_SESSION['historico'];
-            $historico[] = "$numero1 $operacao $num2 = $resultado";
-            $_SESSION['historico'] = $historico;
-        }
+            $resultado = Oper($numero1, $numero2, $operacao);
+        adicionarCalculoAoHistorico($numero1, $numero2, $operacao, $resultado);
     }
     
+    }
 ?>
