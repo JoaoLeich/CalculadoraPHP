@@ -2,78 +2,33 @@
 
     function Oper($operacao,$num1,$num2){
 
-        if(strcasecmp($operacao,"+") == 0){
+        switch ($operacao) {
+            case '+':
+                return $num1 + $num2;
+            case '-':
+                return $num1 - $num2;
+            case '*':
+                return $num1 * $num2;
+            case '/':
+                if ($num2 != 0) {
+                    return $num1 / $num2;
+                } else {
+                    return 'Erro: Divisão por zero';
+                }
+            case "!":                
+            $resultado = 1;
+            while ($num1 != 1)
+            {
+                $resultado = $resultado * $num1;
+                $num1 = $num1 - 1;
+            }
+            return $resultado;
+            case "^": 
+            return pow($num1,$num2);
 
-            $val =  Soma($num1,$num2);
-            return "{$num1} {$operacao} {$num2} = {$val}";
-
+            default:
+                return 'Erro: Operação inválida';
         }
-        else if(strcasecmp($operacao,"-") == 0){
-            
-            $val =  Subtracao($num1,$num2);
-            return "{$num1} {$operacao} {$num2} = {$val}";
-
-        }
-        if(strcasecmp($operacao,"*") == 0){
-         
-            $val =  Multiplicacao($num1,$num2);
-            return "{$num1} {$operacao} {$num2} = {$val}";
-        }
-        if(strcasecmp($operacao,"/") == 0){
-        
-            $val =  Divisao($num1,$num2);
-            return "{$num1} {$operacao} {$num2} = {$val}";
-
-        }
-        if(strcasecmp($operacao,"!") == 0){
-        
-            $val =  Fatoração($num1,$num2);
-            return "{$num1} {$operacao} {$num2} = {$val}";
-
-        }
-        if(strcasecmp($operacao,"^") == 0){
-
-            $val =  Potenciação($num1,$num2);
-            return "{$num1} {$operacao} {$num2} = {$val}";
-
-        }
-        
-    }
-
-    function Soma($x,$y){
-
-        return $x + $y;
-
-    }
-    
-    function Subtracao($x,$y){
-
-        return $x - $y;
-
-    }
-    
-    function Divisao($x,$y){
-     
-        return round( $x / $y,2);
-
-    }
-    
-    function Multiplicacao($x,$y){
-
-        return $x * $y;
-
-    }
-    
-    function Fatoração($x,$y){
-
-
-        
-    }
-    
-    function Potenciação($x,$y){
-
-        return pow($x,$y);
-
     }
 
 ?>
